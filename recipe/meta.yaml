@@ -1,6 +1,6 @@
 {% set name = "django-configurations" %}
-{% set version = "2.0" %}
-{% set sha256 = "b4a4eb3ed631c2abbeb7008b5cc5d8d04b190df838e7b613731d728f674f3a2f" %}
+{% set version = "2.1" %}
+{% set sha256 = "71d9acdff33aa034f0157b0b3d23629fe0cd499bf4d0b6d699b9ca0701d952e8" %}
 
 
 package:
@@ -14,7 +14,7 @@ source:
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
