@@ -30,8 +30,6 @@ requirements:
 test:
   imports:
     - configurations
-  commands:
-    - django-cadmin --help
   # needs to fix a dep in django
   #   - pip check
   # requires:
