@@ -30,10 +30,11 @@ test:
   imports:
     - configurations
   commands:
-    - pip check
     - django-cadmin --help
-  requires:
-    - pip
+  # needs to fix a dep in django
+  #   - pip check
+  # requires:
+  #   - pip
 
 about:
   home: https://django-configurations.readthedocs.io/
