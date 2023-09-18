@@ -10,12 +10,11 @@ source:
   sha256: a6c25c143834e67b20d34751512d08b3290684f25098ee212b1ee36804a59085
 
 build:
+  number: 0
   noarch: python
-  skip: true  # [py>=400 or py2k]
   entry_points:
     - django-cadmin = configurations.management:execute_from_command_line
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
 
 requirements:
   host:
