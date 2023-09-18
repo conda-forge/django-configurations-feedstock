@@ -18,11 +18,11 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python 
     - setuptools-scm
     - pip
   run:
-    - python >=3.8
+    - python
     - django >=3.2
     - importlib-metadata  # [py<38]
 
