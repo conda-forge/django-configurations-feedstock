@@ -1,5 +1,5 @@
 {% set name = "django-configurations" %}
-{% set version = "2.2" %}
+{% set version = "2.4.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,46 +7,43 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/django-configurations-{{ version }}.tar.gz
-  sha256: 9e3bcea1355ac50a4c9f854f751d214cb17e5f8adf18405a4488d0a1e8945915
+  sha256: a6c25c143834e67b20d34751512d08b3290684f25098ee212b1ee36804a59085
 
 build:
   number: 0
-  noarch: python
   entry_points:
     - django-cadmin = configurations.management:execute_from_command_line
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python
+    - python 
+    - setuptools-scm
     - pip
-    - setuptools_scm
   run:
     - python
-    - setuptools
-    - six
-    - django >=1.8
+    - django >=3.2
+    - importlib-metadata  # [py<38]
 
 test:
   imports:
     - configurations
-  # needs to fix a dep in django
-  #   - pip check
-  # requires:
-  #   - pip
+  commands:
+    - pip check
+    - DJANGO_CONFIGURATION=core.settings DJANGO_SETTINGS_MODULE=django django-cadmin --help
+  requires:
+    - pip
 
 about:
   home: https://django-configurations.readthedocs.io/
-  license: BSD-3-Clause
-  license_family: BSD
-  license_file: LICENSE
-  summary: 'A helper for organizing Django project settings by relying on well established programming patterns.  '
-  description: |
-    django-configurations eases Django project configuration by relying on the composability of Python classes. It extends the notion of Django's module based settings loading with well established object oriented programming patterns.
-  doc_url: https://django-configurations.readthedocs.io/en/latest/
+  summary: A helper for organizing Django settings.
   dev_url: https://github.com/jazzband/django-configurations
+  license: BSD-3-Clause
+  license_file: LICENSE
 
 extra:
   recipe-maintainers:
     - cshaley
     - sannykr
+    - millsks
+    - rxm7706
