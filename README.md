@@ -7,14 +7,9 @@ Home: https://django-configurations.readthedocs.io/
 
 Package license: BSD-3-Clause
 
-Summary: A helper for organizing Django project settings by relying on well established programming patterns.  
+Summary: A helper for organizing Django settings.
 
 Development: https://github.com/jazzband/django-configurations
-
-Documentation: https://django-configurations.readthedocs.io/en/latest/
-
-django-configurations eases Django project configuration by relying on the composability of Python classes. It extends the notion of Django's module based settings loading with well established object oriented programming patterns.
-
 
 Current build status
 ====================
@@ -151,5 +146,7 @@ Feedstock Maintainers
 =====================
 
 * [@cshaley](https://github.com/cshaley/)
+* [@millsks](https://github.com/millsks/)
+* [@rxm7706](https://github.com/rxm7706/)
 * [@sannykr](https://github.com/sannykr/)
 

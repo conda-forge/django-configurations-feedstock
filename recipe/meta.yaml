@@ -10,20 +10,20 @@ source:
   sha256: a6c25c143834e67b20d34751512d08b3290684f25098ee212b1ee36804a59085
 
 build:
-  number: 0
+  noarch: python
   entry_points:
     - django-cadmin = configurations.management:execute_from_command_line
   script: {{ PYTHON }} -m pip install . -vv
+  number: 1
 
 requirements:
   host:
-    - python 
+    - python >=3.8,<4.0
     - setuptools-scm
     - pip
   run:
-    - python
+    - python >=3.8,<4.0
     - django >=3.2
-    - importlib-metadata  # [py<38]
 
 test:
   imports:
