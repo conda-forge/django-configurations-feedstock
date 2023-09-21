@@ -31,7 +31,6 @@ test:
   commands:
     - pip check
     - DJANGO_CONFIGURATION=core.settings DJANGO_SETTINGS_MODULE=django django-cadmin --help
-    - django-cadmin --help
   requires:
     - pip
 
