@@ -1,5 +1,5 @@
 {% set name = "django-configurations" %}
-{% set version = "2.4.1" %}
+{% set version = "2.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/django-configurations-{{ version }}.tar.gz
-  sha256: a6c25c143834e67b20d34751512d08b3290684f25098ee212b1ee36804a59085
+  sha256: 63fa252c40dc88ea17b8b90f5f4a31a2726e586acb1ff0edc74c228c61f19e5d
 
 build:
   noarch: python
   entry_points:
     - django-cadmin = configurations.management:execute_from_command_line
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
