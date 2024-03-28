@@ -1,5 +1,5 @@
 {% set name = "django-configurations" %}
-{% set version = "2.5" %}
+{% set version = "2.5.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/django-configurations-{{ version }}.tar.gz
-  sha256: 63fa252c40dc88ea17b8b90f5f4a31a2726e586acb1ff0edc74c228c61f19e5d
+  sha256: 6e5083757e2bbdf9bb7850567536b96a93515f6b17503d74928ff628db2e0e94
 
 build:
   noarch: python
