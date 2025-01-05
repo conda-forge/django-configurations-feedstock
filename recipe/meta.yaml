@@ -6,23 +6,24 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/django-configurations-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/django-configurations-{{ version }}.tar.gz
   sha256: 6e5083757e2bbdf9bb7850567536b96a93515f6b17503d74928ff628db2e0e94
 
 build:
   noarch: python
   entry_points:
     - django-cadmin = configurations.management:execute_from_command_line
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 1
 
 requirements:
   host:
-    - python >=3.8,<4.0
+    - python {{ python_min }}
     - setuptools-scm
     - pip
+    - setuptools
   run:
-    - python >=3.8,<4.0
+    - python >={{ python_min }},<4.0
     - django >=3.2
 
 test:
@@ -33,6 +34,7 @@ test:
     - DJANGO_CONFIGURATION=core.settings DJANGO_SETTINGS_MODULE=django django-cadmin --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://django-configurations.readthedocs.io/
