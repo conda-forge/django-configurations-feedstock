@@ -13,7 +13,7 @@ build:
   noarch: python
   entry_points:
     - django-cadmin = configurations.management:execute_from_command_line
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 1
 
 requirements:
@@ -21,6 +21,7 @@ requirements:
     - python {{ python_min }}
     - setuptools-scm
     - pip
+    - setuptools
   run:
     - python >={{ python_min }},<4.0
     - django >=3.2
